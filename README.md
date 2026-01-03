@@ -18,25 +18,29 @@ Page references (e.g. `001`) refer to the scan numbers, not the original book's 
 
 ### Project manager notes ###
 
-# Description
+#### Description
 The book's subtitle is, "A concise code of deportment for both sexes." It's an alphabetical list of dos and don'ts for the upper class.
 
 [The original scans are here at Google Books.](https://books.google.com/books?id=yrUss4WabS4C&pg=PA13&dq=blunders+in+behaviour+corrected&hl=en&newbks=1&newbks_redir=0&sa=X&ved=2ahUKEwijk-jw86CLAxXOG9AFHVVbJbUQ6AF6BAgEEAM#v=onepage&q=blunders%20in%20behaviour%20corrected&f=false)
 
-# Proofreading
+#### Proofreading
 Nothing out of the ordinary.
  
-# Formatting
+#### Formatting
 Nothing out of the ordinary.
 
-#Post Processing
+#### Post Processing
 Please submit it to SR.
 
 ### Forum notes ###
 
+None.
+
 ### General notes ###
 
 ### Illustrations ###
+
+None.
 
 ### Proofer's notes ###
 
