@@ -40,6 +40,12 @@ Please submit it to SR.
 
 ### Proofer's notes ###
 
+> the whole of Shakspere's[**written before standard spelling of "Shakespeare" and should be left as-is? Or corrected? | P3: Shakespeare ?] plays and poems
+
+This book was published in 1855. Comparing Shakspere, Shakspeare, and Shakespeare in Ngrams, all 3 are in the running around that time. Leaving as-printed.
+
+![Google Ngrams - comparing Shakspere, Shakspeare, Shakespeare](ngrams-shakspere.png)
+
 ### Joined hyphenated words ###
 
 ### Spellcheck ###
