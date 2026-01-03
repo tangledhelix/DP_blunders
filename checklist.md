@@ -21,8 +21,8 @@ cd ~/dp/util
 * [x] `File → Project → Configure Page Labels...`. Check for roman numerals and unnumbered pages. Go to end of book to check page numbers line up.
 
 ### Sequential Inspection of Text
-* [ ] Turn on `Auto Img`
-* [ ] Check for chapter/section spacing (2,4). Regex: `(^$\n^$\n^$\n^$\n|^$\n^$\n)` and use "Highlight All".
+* [x] Turn on `Auto Img`
+* [x] Check for chapter/section spacing (2,4). Regex: `(^$\n^$\n^$\n^$\n|^$\n^$\n)` and use "Highlight All".
 
 Check for:
 
@@ -50,12 +50,12 @@ Check for:
 * Note any illustrations in a list in `README.md` for later handling
 
 ### Basic Fixup
-* [ ] If project has Greek charset enabled, regex search `\p{Greek}` to look for Greek characters where they shouldn't be.
-* [ ] Use `Tools → Basic Fixup`.
-* [ ] Remove any remaining `[Blank Page]` lines
+* [x] If project has Greek charset enabled, regex search `\p{Greek}` to look for Greek characters where they shouldn't be.
+* [x] Use `Tools → Basic Fixup`.
+* [x] Remove any remaining `[Blank Page]` lines
 
 ### Errata
-* [ ] If original book had errata, apply it and note in TN
+* [x] If original book had errata, apply it and note in TN
 
 ### Fix Block Markups and Proofer Notes
 Instructions for `/* */` and `/# #/` blocks:
