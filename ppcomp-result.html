@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compare blunders-utf8.txt and blunders.html</title>
+  <style type="text/css">
+
+
+body {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+ins, del {
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  font-size: larger;
+}
+ins, .second { color: green; }
+del, .first { color: purple; }
+.lineno { margin-right: 1em; }
+.bbox {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px dashed;
+  padding: 0 1em;
+  background-color: lightcyan;
+  width: 90%;
+  max-width: 50em;
+}
+h1, .center { text-align: center; }
+/* Use a CSS counter to number each diff. */
+body { counter-reset: diff; } /* set diff counter to 0 */
+hr::before {
+  counter-increment: diff; /* inc the diff counter ... */
+  content: "Diff " counter(diff) ": "; /* ... and display it */
+}
+.error-border {
+  border-style: double;
+  border-color: red;
+  border-width: 15px;
+}
+
+
+  </style>
+</head>
+<body>
+
+<h1>Diff of <span class="first">blunders-utf8.txt</span> and <span class="second">blunders.html</span></h1>
+
+    <div class="bbox">
+      <p class="center">— Note —</p>
+      <p>The first number is the line number in the first file (<b>blunders-utf8.txt</b>)<br />
+        The second number is the line number in the second file (<b>blunders.html</b>)<br />
+        Line numbers can sometimes be very approximate.</p>
+      <p>Deleted words that were in the first file but not in the second will appear <del>like
+         this</del>.<br />
+        Inserted words that were in the second file but not in the first will appear <ins>like
+         this</ins>.</p>
+    </div>
+    
+<div><p>There are <b>2</b> diff sections in the main text.</p><h2>Main text</h2><hr /><pre>
+<span class='lineno'>27 : 190</span>   
+<span class='lineno'>27 : 191</span>   
+<span class='lineno'>27 : 192</span>    <del>Books </del>  <ins>BOOKS </ins> on Etiquette generally confine their attention to the
+<span class='lineno'>27 : 193</span>   usages of exclusively fashionable life, and are useful only in
+<span class='lineno'>28 : 194</span>   forming the habits of youth, or those who, suddenly elevated
+</pre><hr /><pre>
+<span class='lineno'>1139 : 1443</span> retained.
+<span class='lineno'>1140 : 1443</span> 
+<span class='lineno'>1141 : 1443</span>  <del>This file uses _underscores_ to indicate italic text. Small capitals </del>
+<span class='lineno'>1142 : 1443</span>  <del>changed to all capitals. </del>
+<span class='lineno'>1143 : 1444</span> 
+<span class='lineno'>1144 : 1448</span> p. 26: changed “your’s” to “yours”
+</pre>
+</div>
+
+</body>
+</html>
+
