@@ -417,8 +417,8 @@ To use multi-touch gestures on iPhone/iPad Simulator, hold the Option key.
 This lets you do pinch gestures. To track two fingers together (no pinch),
 e.g. for scrolling, use Shift-Option instead.
 
-* [ ] Review in multiple browsers (Safari, Chrome, Firefox, maybe Edge?)
-* [ ] Pay particular attention to complex items like tables, poetry
+* [x] Review in multiple browsers (Safari, Chrome, Firefox, maybe Edge?)
+* [x] Pay particular attention to complex items like tables, poetry
 
 ## Ebook generation
 
@@ -447,11 +447,11 @@ e.g. for scrolling, use Shift-Option instead.
 * Also a utility `kepubify` (link below) that converts; it's unclear what this conversion does that's any better than just renaming the file. Changing the filename is enough to invoke a different / better rendering engine on Kobo devices.
 
 ### Build and upload Ebooks
-* [ ] HTML → Ebookmaker (online)
-* [ ] Optional: Convert epub3 with [kepubify](https://pgaskin.net/kepubify/try/)
-* [ ] Optional: Upload epub3 with [Send to Kindle](https://www.amazon.com/gp/sendtokindle)
-* [ ] Add epub3 to Apple Books
-* [ ] Optional: Add epub, epub3, renamed-kepub, converted-kepub to Dropbox for Kobo
+* [x] HTML → Ebookmaker (online)
+* [x] Optional: Convert epub3 with [kepubify](https://pgaskin.net/kepubify/try/)
+* [x] Optional: Upload epub3 with [Send to Kindle](https://www.amazon.com/gp/sendtokindle)
+* [x] Add epub3 to Apple Books
+* [x] Optional: Add epub, epub3, renamed-kepub, converted-kepub to Dropbox for Kobo
 
 ### Ebook review
 <details>
@@ -462,21 +462,21 @@ Don't necessarily have to do *all* of these, but these are what I have.
 * [ ] Review Ebook ToC in at least one e-reader, for structure & content
   * Can try using `title=` attr if a header title has footnote marker etc.
 * [ ] Mac
-  * [ ] Adobe Digital Editions (epub3)
-  * [ ] Apple Books
-  * [ ] Kindle Previewer (epub3)
-  * [ ] Calibre (epub3)
+  * [x] Adobe Digital Editions (epub3)
+  * [x] Apple Books
+  * [x] Kindle Previewer (epub3)
+  * [x] Calibre (epub3)
 * [ ] Phone
   * [ ] Apple Books (iPhone)
   * [ ] Kindle (iPhone)
 * [ ] Tablet
   * [ ] Kindle (Android)
   * [ ] Google Play Books - Android (Dropbox)
-  * [ ] Apple Books - iPad mini
+  * [x] Apple Books - iPad mini
 * [ ] E-ink
-  * [ ] Kobo Libra Colour (renamed-kepub)
-  * [ ] Kobo Libra Colour (converted-kepub)
-  * [ ] Kindle Paperwhite
+  * [x] Kobo Libra Colour (renamed-kepub)
+  * [x] Kobo Libra Colour (converted-kepub)
+  * [ ] Kindle Colorsoft
 
 </details>
 
