@@ -1,39 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      Blunders in behaviour corrected | Project Gutenberg
+    </title>
+    <link rel="icon" href="images/cover.jpg" type="image/x-cover">
+    <style>
+
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    text-align: center; /* all headings centered */
+    clear: both;
+}
+h1 .smaller { font-size: 80%; }
+h1 .gesperrt { letter-spacing: 0.15em; }
+.subtitle {
+  text-indent: 0;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.tp-small { font-size: 80%; }
+.tp-large { font-size: 115%; }
+
+p {
+    margin-top: .5em;
+    text-align: justify;
+    margin-bottom: .5em;
+}
+
+.gap      {margin-top: 1.5em;}
+.p2       {margin-top: 2em;}
+.p4       {margin-top: 4em;}
+.p6       {margin-top: 6em;}
+
+hr {
+    width: 33%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: 33.5%;
+    margin-right: 33.5%;
+    clear: both;
+}
+
+hr.tb   {width: 45%; margin-left: 27.5%; margin-right: 27.5%;}
+hr.chap {width: 65%; margin-left: 17.5%; margin-right: 17.5%;}
+@media print { hr.chap {display: none; visibility: hidden;} }
+hr.full {width: 95%; margin-left: 2.5%; margin-right: 2.5%;}
+
+hr.r5  {width: 5%; margin-top: 1em; margin-bottom: 1em; margin-left: 47.5%; margin-right: 47.5%;}
+hr.r65 {width: 65%; margin-top: 3em; margin-bottom: 3em; margin-left: 17.5%; margin-right: 17.5%;}
+
+div.chapter {page-break-before: always;}
+h2.nobreak  {page-break-before: avoid;}
+
+ul.index { list-style-type: none; }
+li.ifrst {
+    margin-top: 1em;
+    text-indent: -2em;
+    padding-left: 1em;
+}
+li.indx  {
+    margin-top: .5em;
+    text-indent: -2em;
+    padding-left: 1em;
+}
+li.isub1 {
+    text-indent: -2em;
+    padding-left: 2em;
+}
+li.isub2 {
+    text-indent: -2em;
+    padding-left: 3em;
+}
+li.isub3 {
+    text-indent: -2em;
+    padding-left: 4em;
+}
+li.isub4 {
+    text-indent: -2em;
+    padding-left: 5em;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+table.autotable    { border-collapse: collapse; }
+table.autotable td,
+table.autotable th { padding: 0.25em; }
+
+.tdl      {text-align: left;}
+.tdr      {text-align: right;}
+.tdc      {text-align: center;}
+
+.pagenum { /* uncomment the next line for invisible page numbers */
+    /*  visibility: hidden;  */
+    position: absolute;
+    left: 92%;
+    font-size: small;
+    text-align: right;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-indent: 0;
+} /* page numbers */
+
+.linenum {
+    position: absolute;
+    top: auto;
+    left: 4%;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+} /* poetry number */
+
+blockquote {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+.sidenote {
+    width: 20%;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    margin-left: 1em;
+    float: right;
+    clear: right;
+    margin-top: 1em;
+    font-size: small;
+    color: black;
+    background: #eeeeee;
+    border: 1px dashed;
+}
+
+.bb       {border-bottom: 2px solid;}
+
+.bl       {border-left: 2px solid;}
+
+.bt       {border-top: 2px solid;}
+
+.br       {border-right: 2px solid;}
+
+.bbox     {border: 2px solid;}
+
+.center   {text-align: center; text-indent: 0;}
+
+.right    {text-align: right;}
+
+.smcap    {font-variant: small-caps;}
+
+.allsmcap {font-variant: small-caps; text-transform: lowercase;}
+
+.u        {text-decoration: underline;}
+
+.gesperrt
+{
+    font-style: normal;
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+}
+.x-ebookmaker-2 .gesperrt {
+    font-style: italic;
+    letter-spacing: normal;
+    margin-right: 0em;
+}
+
+figcaption   {font-weight: bold;}
+figcaption p {margin-top: 0; margin-bottom: .2em; text-align: inherit;}
+
+/* Images */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+img.w100 {width: 100%;}
 
 
+.figcenter {
+    margin: auto;
+    text-align: center;
+    page-break-inside: avoid;
+    max-width: 100%;
+}
+
+.figleft {
+    float: left;
+    clear: left;
+    margin-left: 0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-right: 1em;
+    padding: 0;
+    text-align: center;
+    page-break-inside: avoid;
+    max-width: 100%;
+}
+/* comment out next line and uncomment the following one for floating figleft on ebookmaker output */
+.x-ebookmaker .figleft {float: none; text-align: center; margin-right: 0;}
+/* .x-ebookmaker .figleft {float: left;} */
+
+.figright {
+    float: right;
+    clear: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-right: 0;
+    padding: 0;
+    text-align: center;
+    page-break-inside: avoid;
+    max-width: 100%;
+}
+/* comment out next line and uncomment the following one for floating figright on ebookmaker output */
+.x-ebookmaker .figright {float: none; text-align: center; margin-left: 0;}
+/* .x-ebookmaker .figright {float: right;} */
+
+/* Footnotes */
+.footnotes        {border: 1px dashed;}
+
+.footnote         {margin-left: 10%; margin-right: 10%; font-size: 0.9em;}
+
+.footnote .label  {position: absolute; right: 84%; text-align: right;}
+
+.fnanchor {
+    vertical-align: super;
+    font-size: .8em;
+    text-decoration:
+    none;
+}
+
+/* Poetry */
+/* uncomment the next line for centered poetry */
+/* .poetry-container {display: flex; justify-content: center;} */
+.poetry-container {text-align: center;}
+.poetry           {text-align: left; margin-left: 5%; margin-right: 5%;}
+.poetry .stanza   {margin: 1em auto;}
+.poetry .verse    {text-indent: -3em; padding-left: 3em;}
+
+/* Transcriber's notes */
+.transnote {background-color: #E6E6FA;
+    color: black;
+    font-size:small;
+    padding:0.5em;
+    margin-bottom:5em;
+    font-family:sans-serif, serif;
+}
 
 
-/X
-BLUNDERS IN BEHAVIOUR
+/* indent paragraphs */
+p { text-indent: 1em; }
+p.noindent { text-indent: 0; }
 
-CORRECTED;
+/* de-emphasize page numbers */
+.pagenum { color: #bbbbbb; }
 
+/* footnote block styling */
+.footnotes {
+    border: 1px dashed #aaaaaa;
+    margin-top: 1.5em;
+}
+
+/* TN styling */
+.transnote {
+    background-color: inherit;
+    border: 1px dashed #bbbbbb;
+    margin-top: 3em;
+    page-break-before: always;
+}
+
+/* don't visibly style abbr */
+abbr {
+    border: none;
+    text-decoration: none;
+    font-variant: normal;
+}
+/* abbrs that should be read letter-by-letter */
+abbr.spell { speak: spell-out; }
+
+/* "gray bar" blockquotes */
+blockquote {
+    border-left: .15em solid #c8c8c8;
+    padding-left: .7em;
+    margin-left: 4%;
+    margin-right: 8%;
+}
+
+/* don't wrap; better than invisible word joiner char? */
+.nowrap { white-space: nowrap; }
+
+/* remove italic styling, e.g. on a <cite> */
+.nonitalic { font-style: normal; }
+
+
+    </style>
+</head>
+<body>
+
+
+<p><span class="pagenum" id="Page_1">[Pg 1]</span></p>
+
+<h1>
+BLUNDERS IN BEHAVIOUR<br><br>
+<span class="smaller gesperrt">CORRECTED;</span>
+</h1>
+
+<p class="center subtitle p2">
 A Concise Code of Deportment for Both Sexes.
+</p>
 
-BY
+<p class="center p4">
+<span class="tp-small">BY</span><br>
+<span class="tp-large">AN OBSERVER OF MEN AND THINGS.</span>
+</p>
 
-AN OBSERVER OF MEN AND THINGS.
+<p class="center p2">
+“It is a man’s manners that make his fortune.”—<span class="smcap">Cornelius Nepos.</span>
+</p>
 
-“It is a man’s manners that make his fortune.”—<sc>Cornelius Nepos.</sc>
+<p class="center p2">
+LONDON:<br>
+<span class="tp-large">GROOMBRIDGE &amp; SONS, 5, PATERNOSTER ROW.</span>
+</p>
 
-LONDON:
-GROOMBRIDGE & SONS, 5, PATERNOSTER ROW.
+<hr class="r5">
 
+<p class="center">
 1855.
-X/
+</p>
 
 
+<hr class="chap x-ebookmaker-drop">
+<div class="chapter">
+
+<p><span class="pagenum" id="Page_2">[Pg 2]</span></p>
 
 
-INTRODUCTION.
+  <h2 class="nobreak" id="INTRODUCTION">
+    INTRODUCTION.
+  </h2>
+</div>
 
 
-Books on Etiquette generally confine their attention to the
+<p class="noindent"><span class="smcap">Books</span> on Etiquette generally confine their attention to the
 usages of exclusively fashionable life, and are useful only in
 forming the habits of youth, or those who, suddenly elevated
 to a status higher than their natural reach, wish to adapt
 themselves to a kind of society to which they are more frequently
 allured by vanity than sense; for there is nothing
-more really hollow than the life termed <i>par-excellence</i> <sc>FASHIONABLE</sc>.
+more really hollow than the life termed <i>par-excellence</i> <span class="allsmcap">FASHIONABLE</span>.
 The middle ranks of life are acknowledged to be most
 tinctured with virtue, manliness, and religious feeling; for the
 vanities of wealth, and the debasements of poverty, are alike
@@ -59,7 +384,7 @@ check vice by making it unfashionable. Virtue and religion
 are not only compatible with elegance of manners, but are
 strengthened in their exercise by them; and every man who is
 not a misanthropist, every woman who is not a nun, must feel
-the necessity of attention to forms and usages, and to those
+<span class="pagenum" id="Page_4">[Pg 4]</span>the necessity of attention to forms and usages, and to those
 elegancies of manner which characterize good-nature and
 uprightness of heart as much as they do a fashionable education.
 Politeness is as essential to the man of business as to
@@ -93,15 +418,22 @@ offered here are intended to help in this direction, and are
 addressed to such as have not had the advantage of polite
 education and example in youth, and who may have formed
 their habits under adverse circumstances, and are not too vain
-of them to seek for improvement.
+of them to seek for improvement.</p>
 
 
+<hr class="chap x-ebookmaker-drop">
+<div class="chapter">
+
+<p><span class="pagenum" id="Page_5">[Pg 5]</span></p>
 
 
-BLUNDERS IN BEHAVIOUR CORRECTED.
+  <h2 class="nobreak" id="BLUNDERS_IN_BEHAVIOUR_CORRECTED">
+    BLUNDERS IN BEHAVIOUR CORRECTED.
+  </h2>
+</div>
 
 
-<sc>Absence of Mind.</sc>—Chesterfield, in his “Advice to his
+<p><span class="smcap">Absence of Mind.</span>—Chesterfield, in his “Advice to his
 Son,” justly characterises an absent man as unfit for business
 or conversation. Absence of mind is usually affected, and
 springs in most cases from a desire to be thought abstracted
@@ -118,15 +450,15 @@ abstracted in a book. It is foolish, and, what is worse for the
 absentee, it looks so. A hint on this subject is sufficient, and
 we do hint, that abstractedness of manner should never be
 exhibited; the greatest geniuses have ever been attentive to
-trifles when it so behoved them.
+trifles when it so behoved them.</p>
 
 
-<sc>Accomplishments</sc> are by some considered too trifling for
+<p class="gap"><span class="smcap">Accomplishments</span> are by some considered too trifling for
 their attention, but no person desirous of the enjoyments of
 social life can spurn them without paying the penalty. Men
 of business are frequently denied the leisure necessary to
 render themselves moderately proficient in continental languages,
-music, dancing, and the arts of pleasing. Yet such
+<span class="pagenum" id="Page_6">[Pg 6]</span>music, dancing, and the arts of pleasing. Yet such
 things are essential, and add very much to our enjoyments;
 they tend to refine the nature, and form links of connection
 between persons of all ages, sexes, and dispositions. It is our
@@ -136,10 +468,10 @@ and, by a proper attention to such things, we insure
 for ourselves reception in quarters where we should be obnoxious
 without them. These acquisitions are equally important
 to both sexes, though those of the masculine gender are most
-guilty of the blunder of setting them at nought.
+guilty of the blunder of setting them at nought.</p>
 
 
-<sc>Affectation</sc> is more prevalent than people care to own.
+<p class="gap"><span class="smcap">Affectation</span> is more prevalent than people care to own.
 Ladies are terribly given to this folly. One affects not to
 know the colour of money, unless it be pin-money, and then
 her wits are unusually sharp. Another is so fashionable in
@@ -166,7 +498,7 @@ innumerable from out-of-the-way books. Such things are
 well enough in moderation; but if not tempered as to time
 and place, stamp the individual as conceited. I knew a man
 who, in every respect but one, was a model of deportment and
-sound sense; but in the one blunder of which he was guilty he
+<span class="pagenum" id="Page_7">[Pg 7]</span>sound sense; but in the one blunder of which he was guilty he
 managed, on every possible occasion, to mar the esteem in
 which he was everywhere held. He was a profound chemist,
 and on all subjects ready and well informed, but he introduced
@@ -180,9 +512,9 @@ of us are weak enough to think that what we especially delight
 in must prove equally acceptable to all we meet; and affectation,
 in this respect, must be guarded against by all who desire
 to conduct themselves in society so as to be respected and
-esteemed.
+esteemed.</p>
 
-Affectation of superiority is worse still, because it galls the
+<p>Affectation of superiority is worse still, because it galls the
 feelings of those to whom it is offered. In company with an
 inferior, never let him feel his inferiority. An employer, who
 invites his confidential clerk to his house, should treat him in
@@ -203,11 +535,11 @@ him, requested to sing one of his own songs. He immediately
 gave his entertainers that thrilling assertion of independence,
 “A man’s a man for a’ that,” and left the moment he had
 finished, his heart embittered at patronage offered in a manner
-so insulting to his poverty.
+so insulting to his poverty.</p>
 
-If you take pains to mortify a man, to make him feel that
+<p>If you take pains to mortify a man, to make him feel that
 he occupies an inferior station, that he stands below you in
-abilities, rank, or fortune, you offer him an insult, which,
+<span class="pagenum" id="Page_8">[Pg 8]</span>abilities, rank, or fortune, you offer him an insult, which,
 though he may be too much of a gentleman to resent, nevertheless
 he is sure to feel, and for which none of your kindnesses
 are a compensation. An inferior is even entitled to
@@ -215,10 +547,10 @@ superior attention, that he may not have even the fear of being
 slighted; and, above all things, that he have sufficient confidence
 in himself, to mingle freely in conversation. True
 politeness consists in making everybody happy about you, and
-to do otherwise a proof of an uncultivated nature.
+to do otherwise a proof of an uncultivated nature.</p>
 
 
-<sc>Affronts</sc> are to be borne more patiently than we are wont
+<p class="gap"><span class="smcap">Affronts</span> are to be borne more patiently than we are wont
 to bear them. To resent an affront is usually wrong, and for
 these reasons:—We are not always sure that an affront was
 intended, in which case resentment must be built upon error.
@@ -232,10 +564,10 @@ which we must tolerate. Besides, to take notice of
 every trifling annoyance shows too great a study of trifles,
 quite apart from the dignified bearing of gentlemanly conduct.
 Do not notice every offence, and you will not have many to
-trouble you.
+trouble you.</p>
 
 
-<sc>Ball Room.</sc>—Everybody knows it is a blunder to enter
+<p class="gap"><span class="smcap">Ball Room.</span>—Everybody knows it is a blunder to enter
 a ball room with the head covered; but everybody does not
 know that it is equally so to enter immediately after smoking,
 when every lady you speak to must put up with the Stygian
@@ -248,7 +580,7 @@ courtesy; but these are apt to commit blunders unless they
 study to please. Those unused to the ball room should enter
 it with confidence, seek a partner, and after one or two dances
 leave. After leading your partner to a seat leave her, but not
-abruptly; if you burden her with your society she may fail in
+<span class="pagenum" id="Page_9">[Pg 9]</span>abruptly; if you burden her with your society she may fail in
 getting another partner. Young men, who have not had much
 experience in polite circles, are sometimes so enamoured of a
 lady, after one or two dances, as to continue their companionship
@@ -269,18 +601,18 @@ are to be avoided. Relatives and lovers should associate
 as little as possible in the dance; and a man should but
 seldom, except in very homely parties, dance with his wife.
 Greetings in the ball room should be quietly performed, so as
-not to attract attention.
+not to attract attention.</p>
 
-Ladies are generally <i>au fait</i> in ball room etiquette; but having
+<p>Ladies are generally <i>au fait</i> in ball room etiquette; but having
 once or twice seen a lady rambling in the room by herself,
 I will here hint, for the benefit of my fair readers, that a lady
 should not leave her seat to cross the room, or speak to a
 friend, unless accompanied by a gentleman. A little observation,
 and a modest confidence, will enable any person to
-acquire ease and elegance in parties where dancing is going on.
+acquire ease and elegance in parties where dancing is going on.</p>
 
 
-<sc>Button-holding.</sc>—Chesterfield inveighs against holding
+<p class="gap"><span class="smcap">Button-holding.</span>—Chesterfield inveighs against holding
 a man by the button, “for if people are not willing to hear
 you, you had much better hold your tongue than them.” Button-holding
 is not a common vice, but pointing, nudging,
@@ -289,14 +621,14 @@ of recognition under the table, are too common not to be
 noticed here as terrible breaches of deportment. Significant
 looks and gestures are equally objectionable, and must be
 avoided by all who desire to soar above positive vulgarity. I
-have often been annoyed by bearing a friend discourse on some
+<span class="pagenum" id="Page_10">[Pg 10]</span>have often been annoyed by bearing a friend discourse on some
 person’s failings or excellencies, the person referred to being
 known only to the speaker. It is a bad rule to talk of persons
 at all, but more especially if the person spoken of is not known
-to all the listeners.
+to all the listeners.</p>
 
 
-<sc>Calls.</sc>—When you call on a friend and do not find him at
+<p class="gap"><span class="smcap">Calls.</span>—When you call on a friend and do not find him at
 home, leave your card, your name will not be sufficient. After
 having made a call, it is the duty of your acquaintance to
 return it; and unless it be returned (peculiar circumstances
@@ -317,10 +649,10 @@ the hour of dinner. You may, perhaps, be invited to sit
 down, but if the thing be repeated, your acquaintance will be
 unwelcome. This would scarcely seem worth mentioning, but
 the practice prevails a good deal, and is a blunder to be guarded
-against.
+against.</p>
 
 
-<sc>Children.</sc>—Almost every parent commits the blunder of
+<p class="gap"><span class="smcap">Children.</span>—Almost every parent commits the blunder of
 making too much of his children in the presence of visitors.
 It is very pardonable in fond mothers, but papas are the most
 subject to make themselves ridiculous on this score. Remember
@@ -330,7 +662,7 @@ eccentricity, and excellence. The other extreme is just as
 bad; and to thrust your children from the room, or to treat
 them harshly in the presence of others, makes you look as if
 you were ashamed of them. Still, as a rule, children should
-not be obtruded on the attention of visitors, or made to exhibit
+<span class="pagenum" id="Page_11">[Pg 11]</span>not be obtruded on the attention of visitors, or made to exhibit
 their parts to those who feel compelled to praise even in spite
 of disapprobation. My friend R—— often burdens me with
 anecdotes of his boy’s roguery, and this in presence of the
@@ -340,40 +672,40 @@ though I can bear this better than I can to hear my
 friend talk of his son’s musical predilections, which always lead
 the youngster to a sham pianoforte performance with his
 fingers on the table, or to the humming of some tune in a
-tone loud enough to stop all conversation.
+tone loud enough to stop all conversation.</p>
 
 
-<sc>Cleanliness</sc> of person is a distinguishing trait of every
+<p class="gap"><span class="smcap">Cleanliness</span> of person is a distinguishing trait of every
 well-bred person; and this not on state occasions only, but
 at all times, even at home. It is a folly to sit by the fire in a
 slovenly state, consoling oneself with the remark, “Nobody
 will call to-day.” Should somebody call we are in no plight
 to receive them, and otherwise it is an injury to the character
 to allow slovenly habits to control us even when we are
-unseen.
+unseen.</p>
 
 
-<sc>Commands</sc> should never be given in a commanding tone.
+<p class="gap"><span class="smcap">Commands</span> should never be given in a commanding tone.
 A gentleman requests, he does not command. We are not to
 assume so much importance, whatever our station, as to give
 orders in the “imperative mood,” nor are we ever justified in
 thrusting the consciousness of servitude on any one. The
 blunder of commanding sternly is most frequently committed
 by those who have themselves but just escaped servitude, and
-we should not exhibit to others a weakness so unbecoming.
+we should not exhibit to others a weakness so unbecoming.</p>
 
 
-<sc>Control of Temper.</sc>—It is very unbecoming to exhibit
+<p class="gap"><span class="smcap">Control of Temper.</span>—It is very unbecoming to exhibit
 petulance, or angry feeling, though it is indulged in so largely
 in almost every circle. The true gentleman does not suffer
 his countenance to be easily ruffled; and we only look paltry
 when we suffer temper to hurry us into ill-judged expressions
-of feeling. “He that is soon angry dealeth foolishly.”
+of feeling. “He that is soon angry dealeth foolishly.”</p>
 
 
-<sc>Conversation</sc> ranks the highest among social enjoyments.
+<p class="gap"><span class="smcap">Conversation</span> ranks the highest among social enjoyments.
 To converse well requires extensive knowledge, elegance of
-manner, command of temper, and a desire to please. He
+<span class="pagenum" id="Page_12">[Pg 12]</span>manner, command of temper, and a desire to please. He
 who cannot converse to the profit of the company, must listen
 for the profit of himself; though no one need preserve a stolid
 silence from excessive bashfulness or conscious inability. The
@@ -404,16 +736,16 @@ Pity that many good societies should be marred by unbridled
 and untamed tongues. Pity that conversation is not everywhere
 made a matter of study, that men will not exercise as
 much care in speaking their thoughts as they do in writing
-them.
+them.</p>
 
-Among the most glaring social blunders to be noticed under
+<p>Among the most glaring social blunders to be noticed under
 this head are, talking too much of ourselves. This is a blunder
 very commonly committed, and is as much a mark of vanity
 as want of sense. Really <i>great men</i> have never said much of
 themselves, therefore we may infer, by the converse argument,
 that he who indulges in talking of himself must be a really
 <i>small man</i>. In the whole of Shakspere’s plays and poems you
-do not gather enough of the poet’s history to settle definitely
+<span class="pagenum" id="Page_13">[Pg 13]</span>do not gather enough of the poet’s history to settle definitely
 the question whether he was lame or not, or even to fix, with
 any certainty, his opinions on political and religious subjects.
 He who talks much of himself is also apt to tell of the injuries
@@ -425,9 +757,9 @@ insult, and so on. If you cannot say something cheerful
 to your friend, keep at a distance, and let him enjoy at
 peace his own cogitations. What are your affairs to other
 people? keep your own counsel, and be not too ready to
-make confidants.
+make confidants.</p>
 
-If you are not to talk of yourself freely, so are you not to
+<p>If you are not to talk of yourself freely, so are you not to
 talk freely of others. I regret to have to confess here, that
 scandal, in some shape or other, is the bane of our English
 society, and needs as severe lashing now-a-days as it did when
@@ -453,10 +785,10 @@ in depreciatory remarks, insinuations, sneers, and the
 like, no matter though he <i>thinks</i> he has good grounds for
 them, is like the viper, which steals noiselessly on its unsuspecting
 victim, gives its sting in silence, and disappears. To
-slander, in plain terms, is better than to hint and insinuate,
-but both are evidences of a mean and contemptible mind.
+<span class="pagenum" id="Page_14">[Pg 14]</span>slander, in plain terms, is better than to hint and insinuate,
+but both are evidences of a mean and contemptible mind.</p>
 
-Contradictions are usually given too abruptly, and sometimes
+<p>Contradictions are usually given too abruptly, and sometimes
 lead to wrangling, or if not noticed by the parties
 receiving them, are still apt to rankle and annoy secretly, and
 destroy the harmony which ought to prevail in an assembly of
@@ -466,9 +798,9 @@ Such things are worthy only of the lowest rabble, and no man
 making pretensions to the status of a gentleman should descend
 to it. Oaths of all kinds are as ungentlemanly as they are
 wicked; and the frequent use of the condemnatory oath as
-verb, adjective, and noun, both immoral and degrading.
+verb, adjective, and noun, both immoral and degrading.</p>
 
-There are some men, of respectable position and pretensions,
+<p>There are some men, of respectable position and pretensions,
 who are so barren of general intelligence that they can talk of
 nothing except their own business affairs. Such men are very
 worthless in social society, and we conjure the reader at all
@@ -492,10 +824,10 @@ myself with a newspaper, and read the list of bankruptcies
 and suicides, than listen to a man who indulged in descriptions
 of his own skill in trade, his losses and profits, or the
 thousand and one trifles which we all have to consider and
-remember, but which are of no interest to any but ourselves.
+remember, but which are of no interest to any but ourselves.</p>
 
-The affectation of wisdom is a very common vice amongst
-pseudo-students. For instance, Mr. Smallweed, who is really
+<p>The affectation of wisdom is a very common vice amongst
+<span class="pagenum" id="Page_15">[Pg 15]</span>pseudo-students. For instance, Mr. Smallweed, who is really
 a well-informed man, is so conceited in this respect that he
 cannot, when the subject of the conversation affords him opportunity,
 avoid interlarding his remarks with technicalities and
@@ -532,15 +864,15 @@ to speak of “Bulwer’s last novel,” or “the new edition
 of Gill’s Commentary.” We should say, “Sir Edward
 Lytton Bulwer,” and “Dr. Gill,” and not abbreviate, as if a
 respectful mention of a person cost us more breath than he is
-worth.
+worth.</p>
 
-A few short rules for conversation may here be useful; and
-I offer them in the fewest words possible, because I think that
+<p>A few short rules for conversation may here be useful; and
+<span class="pagenum" id="Page_16">[Pg 16]</span>I offer them in the fewest words possible, because I think that
 for those who wish to cultivate a polite bearing, and conserve
 the good feeling which usually accompanies gentlemanly conduct,
-a hint is alone sufficient.
+a hint is alone sufficient.</p>
 
-1. Do not talk too long together, for fear of tiring your
+<p>1. Do not talk too long together, for fear of tiring your
 hearers, and so as to afford others an opportunity of talking
 also. 2. Watch your listeners to be sure that they are interested,
 and if they appear not to be, allow the conversation to
@@ -575,16 +907,16 @@ which a certain place is said to be paved. 12. Never burden
 ladies with arguments. They are very wise in dreading them
 as they do. 13. Treat females as becomes them, and indulge
 none of those vanities, so prevalent at the present day, of
-regarding women as inferior beings. 14. Swearing, coarse
+<span class="pagenum" id="Page_17">[Pg 17]</span>regarding women as inferior beings. 14. Swearing, coarse
 jokes, indecent anecdotes, slang phrases, and personal allusions
 are very common, but not the less unprofitable, unreasonable,
 ungentlemanly, low, and reprehensible. Avoid them; they
 are the puddles of the mind, in which the more we dabble the
 more we are soiled, degraded, and lessened in the esteem
-both of others and ourselves.
+both of others and ourselves.</p>
 
 
-<sc>Dining out.</sc>—When entering where you are invited to dine
+<p class="gap"><span class="smcap">Dining out.</span>—When entering where you are invited to dine
 make your obeisance to the lady of the house, and do not consider
 yourself a guest until you have seen her. In leading a
 lady down stairs do not rush forward and perform the task
@@ -607,19 +939,19 @@ sit in comfort at the meal. The host himself selects the chief
 lady visitor, and leads her off first. The hostess sees all down
 before leaving, therefore, if you are to escort her, allow her time
 to usher her guests away. A stickler for etiquette, in writing
-on this subject, says—
+on this subject, says—</p>
 
-“A custom, lately come in, seems to be deservedly gaining
+<p>“A custom, lately come in, seems to be deservedly gaining
 ground: instead of sitting at the top and bottom of the table,
 the host and hostess sit opposite each other at the middle; by
 which means they are more at ease, more in the centre of their
 guests, and better able to communicate with each other.
 George IV. adopted this practice twenty years ago: it is followed
 by the present queen. According to this arrangement,
-two persons can be accommodated at each end of the table—not
-a bad point where there is limited accommodation.
+<span class="pagenum" id="Page_18">[Pg 18]</span>two persons can be accommodated at each end of the table—not
+a bad point where there is limited accommodation.</p>
 
-“A dinner party usually lasts four hours. If you go at six,
+<p>“A dinner party usually lasts four hours. If you go at six,
 you may order your carriage at ten; if at seven, it may come
 at eleven; and so on. What dinner hours are by-and-bye to
 come to I cannot tell. Not many years ago, dinner at five
@@ -629,17 +961,17 @@ now general; but seven is also far from uncommon. That
 the fashionable dinner hour will be pushed on to eight, to nine,
 or to ten, is what we may reasonably expect. When it comes
 to this pass, will dinner bound back to its ancient hours, or will
-it be extinguished as a formal meal?”
+it be extinguished as a formal meal?”</p>
 
-Fashion runs mad occasionally, and it has lately done so in
+<p>Fashion runs mad occasionally, and it has lately done so in
 thrusting the task of carving on ladies. This must be regarded
 as a blunder we should hope soon to be corrected. The task
 of carving is no light one—it is really a masculine operation,
 and utterly inappropriate for the style of ladies’ dresses, manners,
 and manual weakness. What fashion insists on, in this
-respect, common sense must condemn.
+respect, common sense must condemn.</p>
 
-You must make yourself as useful as possible at the dinner-table,
+<p>You must make yourself as useful as possible at the dinner-table,
 and be attentive in supplying the wants of others, especially
 ladies, but avoid obtruding your services. Reaching
 across the table is very vulgar, as it is also to indulge any
@@ -650,17 +982,17 @@ his pastry, so that when his favourite condiment had been
 removed it had to be brought back for him, causing considerable
 disturbance. Good sense will dictate to a person rather
 to refrain from eating a particular dish than disarrange the
-table in order to gratify an eccentric whim.
+table in order to gratify an eccentric whim.</p>
 
-To eat quick, or very slow, are marks of ill-breeding; and
+<p>To eat quick, or very slow, are marks of ill-breeding; and
 to put your nose in your plate, or emit that peculiar bubbling
 sound, which some indulge in when imbibing soup, vulgar and
 obnoxious. Coughing and sneezing are not always to be
 avoided, but much may be done to conserve elegance and propriety
-at dinner in checking these and other infirmities.
+at dinner in checking these and other infirmities.</p>
 
-It is very painful to see a joint carved ungracefully, but
-nothing but practice will enable you to carve well. Novices
+<p>It is very painful to see a joint carved ungracefully, but
+<span class="pagenum" id="Page_19">[Pg 19]</span>nothing but practice will enable you to carve well. Novices
 in life have a great dread of carving poultry, but it is a less
 difficult operation than is usually imagined; and I would
 advise my readers to practice at home, and acquire ease in such
@@ -670,10 +1002,10 @@ to run the risk of spoiling the bird, and at the same time
 bespattering some lady’s dress with the gravy. But guard
 against bashfulness in such matters; do with confidence whatever
 you feel you can do well, or you will endanger the comfort
-of yourself and others.
+of yourself and others.</p>
 
 
-<sc>Dining at home.</sc>—When you invite several friends to
+<p class="gap"><span class="smcap">Dining at home.</span>—When you invite several friends to
 dine with you have your dinner ready within a short time after
 the hour named, but not punctually to a moment, that any who
 have not arrived may not feel slighted at your having commenced
@@ -690,23 +1022,23 @@ prefer this or that;” or, “I think you are partial to so-and-so,
 I therefore obtained it for you.” If you go out of your way
 to humour your friend you are not to be too modest to let him
 know it, though you are not to exaggerate your attention, and
-make him feel that you burden him with attentions.
+make him feel that you burden him with attentions.</p>
 
 
-<sc>Drinking healths</sc> has happily gone out of fashion. Except
+<p class="gap"><span class="smcap">Drinking healths</span> has happily gone out of fashion. Except
 in bachelor’s parties, where a few old-school notions
 are preserved, it is considered very unpolite to give toasts and
-healths.
+healths.</p>
 
 
-<sc>Disputes</sc> lead to discord; and a man fond of disputation
+<p class="gap"><span class="smcap">Disputes</span> lead to discord; and a man fond of disputation
 soon gets the repute of a quibbler. Objections may be
 politely taken without involving the objector in a controversy.
-The polite man avoids anything which may lead to a protracted
-debate.
+<span class="pagenum" id="Page_20">[Pg 20]</span>The polite man avoids anything which may lead to a protracted
+debate.</p>
 
 
-<sc>Dress.</sc>—The hostess should be particularly careful not to
+<p class="gap"><span class="smcap">Dress.</span>—The hostess should be particularly careful not to
 outshine her guests. I have seen many instances where ladies,
 fond of dress (and what lady is not fond of dress), and conscious
 that it is unbecoming to dress to excess when visitors are
@@ -732,19 +1064,21 @@ quasi-gentlemen do blaze a little in this way, and carry their
 character with them accordingly. The abolition of the white
 neckcloth is, in my opinion, to be regretted; still, fashion has
 declared it shall be used no longer, and at the most <i>recherche</i>
-assemblies the gentlemen all wear black stocks or neckerchiefs.
+assemblies the gentlemen all wear black stocks or neckerchiefs.</p>
 
 
-<sc>Eccentricities</sc> should never be indulged away from home.
+<p class="gap"><span class="smcap">Eccentricities</span> should never be indulged away from home.
 They are rather the tokens of vanity, than the evidences of
 peculiar idiosyncracies. An eccentric man is always dreaded;
 and though the world has been indulgent, in this respect, to a
 few great geniuses, it is usually very harsh on the matter to
 ordinary mortals. Besides, no man was ever great by virtue
-of his peculiarities, but in spite of them.
+of his peculiarities, but in spite of them.</p>
+
+<p><span class="pagenum" id="Page_21">[Pg 21]</span></p>
 
 
-<sc>Excesses.</sc>—It is very common to see persons eat, drink,
+<p class="gap"><span class="smcap">Excesses.</span>—It is very common to see persons eat, drink,
 and smoke to excess. Such habits are vulgar in the lowest
 degree. Some men pride themselves on their abilities in
 drinking and smoking—more especially in the latter. These
@@ -752,16 +1086,16 @@ are blunders that need no reasoning to expose them. The
 man who exhibits a tendency to excesses will, sooner or later,
 be shunned by all except a few of his own stamp, and not even
 by them be respected. Guard against excess in all things, as
-neither gentlemanly nor human.
+neither gentlemanly nor human.</p>
 
 
-<sc>Engagements.</sc>—Some time ago it was fashionable for
+<p class="gap"><span class="smcap">Engagements.</span>—Some time ago it was fashionable for
 parties to arrive some time after the appointed hour. Fashion
 now insists on punctuality—and therein fashion is right. The
-unpunctual can never lay claim to gentility.
+unpunctual can never lay claim to gentility.</p>
 
 
-<sc>Familiarity.</sc>—Too ready an adoption of familiarity is to
+<p class="gap"><span class="smcap">Familiarity.</span>—Too ready an adoption of familiarity is to
 be guarded against; and it is a blunder very frequently made
 for a person to consider himself on terms of intimacy with
 another after one pleasant conversation with him. You may
@@ -786,30 +1120,30 @@ the happy moment, when he should begin to talk, waited for
 with many heart-beatings. But he was too deep for them; he
 sat for hours, drank coffee, wine, answered a few questions,
 but otherwise spoke not a word. The whole affair was a
-miserable failure, and Mr. C—— D—— went away, satisfied,
+<span class="pagenum" id="Page_22">[Pg 22]</span>miserable failure, and Mr. C—— D—— went away, satisfied,
 no doubt, in having inflicted a merited punishment on ill-judged
 familiarity, and perhaps resolved to tell the story some
-day, better than I have done, in one of his inimitable works.
+day, better than I have done, in one of his inimitable works.</p>
 
 
-<sc>Favours</sc> are to be offered without show of patronage, and
+<p class="gap"><span class="smcap">Favours</span> are to be offered without show of patronage, and
 accepted without servile gratitude. Not to acknowledge a
 favour gracefully is unpardonable, but to load the donor with
-sickly gratitude a blunder most abominable.
+sickly gratitude a blunder most abominable.</p>
 
 
-<sc>Fidgetting.</sc>—Very many people, who have acquired
+<p class="gap"><span class="smcap">Fidgetting.</span>—Very many people, who have acquired
 fidgetty ways, carry them wherever they go to the annoyance
 of all who meet them. I once had a visitor who nibbled up a
 whole bundle of cigar lights in the course of an evening, and
 while so engaged with his fingers and teeth, rubbed a hole with
 his foot in a new Brussels carpet. Shifting about in a chair,
 putting the legs now on the fender, now under the table,
-scratching at pimples, biting the lip, &c., are fidgetty actions,
-destructive of a polite bearing.
+scratching at pimples, biting the lip, &amp;c., are fidgetty actions,
+destructive of a polite bearing.</p>
 
 
-<sc>Friendship and acquaintance</sc> are to be distinguished
+<p class="gap"><span class="smcap">Friendship and acquaintance</span> are to be distinguished
 from each other in worldly affairs. Acquaintances sometimes
 become the depositories of secrets which should be even
 guardedly told to friends. Be wary how you treat a mere
@@ -819,10 +1153,10 @@ much confidence. Acquaintances made at convivial meetings
 are generally as hollow as the meetings themselves. Under
 the temptations of hospitality men confide in each other more
 than wisdom would dictate, and the “evening’s diversions”
-do not always “bear the morning’s reflections.”
+do not always “bear the morning’s reflections.”</p>
 
 
-<sc>Homely parties.</sc>—There is a class of recreation that cannot
+<p class="gap"><span class="smcap">Homely parties.</span>—There is a class of recreation that cannot
 be too much praised, and which people, in middle class
 life, are very apt in making as nearly perfect as possible.
 These are Christmas gatherings, birthday and other feasts, and
@@ -830,7 +1164,7 @@ friendly tea-drinkings, where comfort and hospitality reign
 above fashion. Yet, though fashionable arrangements do not
 extensively prevail in these, what we hint at, as necessary in
 social gatherings of a higher kind, is not to be neglected here.
-Politeness of manner, affability of temper, decorum, and proper
+<span class="pagenum" id="Page_23">[Pg 23]</span>Politeness of manner, affability of temper, decorum, and proper
 taste in dress are things to be considered; for though you are
 not required to observe strictly fashionable rules, but to enjoy
 yourself in body and mind, much of the comfort depends on
@@ -839,27 +1173,27 @@ unpretending entertainments to study their behaviour as much
 in these cases as they would for more fashionable assemblies.
 Ease should be preferred to starched formality, but boorishness
 should not disgrace the familiarity which is offered by the
-host, and expected from the guest.
+host, and expected from the guest.</p>
 
 
-<sc>Hospitality</sc> goes hand in hand with politeness. When
+<p class="gap"><span class="smcap">Hospitality</span> goes hand in hand with politeness. When
 you invite friends do not treat your own invitation so lightly
 that it shall appear you do not value your company. Study to
 please and to afford enjoyment, and, in a modest manner, let
 your guests see that you do study them, and their pleasure will
-be enhanced.
+be enhanced.</p>
 
 
-<sc>Hurry.</sc>—A man of sense never exhibits haste. A thing
+<p class="gap"><span class="smcap">Hurry.</span>—A man of sense never exhibits haste. A thing
 done in a hurry is not likely to be well done. Some men of
 business pride themselves on being always pressed for time,
 they think it displays activity of mind; but, on the contrary,
 it exhibits weakness and vulgar breeding. Ease of action
 does not imply sluggishness of mind, nor does undue haste
-betoken importance.
+betoken importance.</p>
 
 
-<sc>Imitation.</sc>—There are few who can resist the tendency of
+<p class="gap"><span class="smcap">Imitation.</span>—There are few who can resist the tendency of
 human nature to imitate. Let one young man of a group
 take to swearing, and the rest of his juvenile friends will
 immediately follow the practice. I have known the style of
@@ -872,10 +1206,12 @@ story of “Cloribel,” which we would offer here as a motto for
 every sensible youth, “Be thyself and none other, and we will
 love thee, whatsoe’er thou art.” Imitate the perfections, not
 the vices, the excellencies rather than the blemishes of a man;
-but preserve your individuality as far as you are able.
+but preserve your individuality as far as you are able.</p>
+
+<p><span class="pagenum" id="Page_24">[Pg 24]</span></p>
 
 
-<sc>Introductions</sc> should be performed with great grace and
+<p class="gap"><span class="smcap">Introductions</span> should be performed with great grace and
 judgment. Be careful, too, whom you introduce; I have seen
 more than one friend ruined by an ill-judged introduction. It
 is a common blunder to introduce persons in the street. If
@@ -887,38 +1223,38 @@ that as to all rules. We have once or twice been mortified by
 a sudden introduction on a door-step. Consider time and
 place. It is necessary, too, in most cases, to ask permission
 of a friend before you introduce him to another; and a lady
-must be introduced to a gentleman, not a gentleman to a lady.
+must be introduced to a gentleman, not a gentleman to a lady.</p>
 
 
-<sc>Invitations.</sc>—The writer from whom we have already
+<p class="gap"><span class="smcap">Invitations.</span>—The writer from whom we have already
 quoted, says on this subject, “When you ask a person to
 dinner, let it, if possible, be done a week or ten days in
 advance; because, to ask a person only a day or two days
 before, looks as if you had been disappointed of somebody
 else, and had asked him as a mere stop-gap. A short invitation
 is only allowable for off-hand parties, or with strangers
-who are passing through a town.
+who are passing through a town.</p>
 
-“When you invite a person to dinner, or any other party at
+<p>“When you invite a person to dinner, or any other party at
 your house, specify only one day. Don’t say you will be glad
 to see him on either of two days, as Tuesday or Wednesday
 next. And why? Because this person may not wish to dine
 with or visit you at all; and so far from a choice of days being
 thought an act of kindness, it may be considered one of servility,
 if not rudeness. Always state only one day; and let
-the invitation, like the answer, be unequivocal.
+the invitation, like the answer, be unequivocal.</p>
 
-“Invitations for several weeks in advance are almost as
+<p>“Invitations for several weeks in advance are almost as
 bad as invitations for alternate days; because long invitations
 convey the impression that the inviter is desperately ill off for
 guests, and wishes to insure a number at all risks. The person
 invited is also apt to feel that it is not <i>his</i> pleasure or convenience
 that is consulted; and to raise a feeling of this kind
-is anything but consistent with true politeness.
+is anything but consistent with true politeness.</p>
 
-“The receiver of an invitation has a duty to perform as
+<p>“The receiver of an invitation has a duty to perform as
 well as its giver. It is incumbent on him to say <i>yes</i> or <i>no</i> at
-once—not to allow a post or a day to elapse before answering.
+<span class="pagenum" id="Page_25">[Pg 25]</span>once—not to allow a post or a day to elapse before answering.
 The reason is obvious: a delay on his part looks as if he were
 waiting for a better invitation before he made up his mind.
 Not to send a speedy reply, therefore, is one of the worst
@@ -928,50 +1264,50 @@ only of a certain number, and if you cannot accept the invitation,
 say so, in order that time may be allowed to invite
 another person in your place. Let the answer also be distinct,
 no uncertainty is allowable; and if the invitation be accepted,
-let it be kept.
+let it be kept.</p>
 
-“The answer to an invitation should be directed to the lady
-of the house.”
+<p>“The answer to an invitation should be directed to the lady
+of the house.”</p>
 
-An invitation may be refused, or you cannot have a will of
+<p>An invitation may be refused, or you cannot have a will of
 your own; but the refusal should be couched in the kindest,
-briefest, and most polite terms.
+briefest, and most polite terms.</p>
 
 
-<sc>Jesting.</sc>—Never make sport of the failings or peculiarities
+<p class="gap"><span class="smcap">Jesting.</span>—Never make sport of the failings or peculiarities
 of another. Such things are common, but none the more
 admirable. If a joke is levelled at you, do not suffer your
 temper to get the worse of you, but join in the laugh good-temperedly,
 and the jester will be beaten by your good humour.
 Jests are not always vulgar, and are allowable with familiar
 friends, but never with strangers, and always without personality
-or ill feeling.
+or ill feeling.</p>
 
 
-<sc>Ladies.</sc>—Some coxcombs pride themselves on their female
+<p class="gap"><span class="smcap">Ladies.</span>—Some coxcombs pride themselves on their female
 acquaintance, and talk freely to their convivial friends of
 them. This is a detestable vice, and at once stamps a man as
 base and cowardly. Others affect a contempt for women, and
 treat them slightingly. Such conduct is at the least unmanly,
 and generally springs from a puffed-up conceit. Deference is
 due to woman in every station of society, and is a characteristic
-of the true gentleman.
+of the true gentleman.</p>
 
 
-<sc>Leaving Company.</sc>—French leave is the fashion now-a-days
+<p class="gap"><span class="smcap">Leaving Company.</span>—French leave is the fashion now-a-days
 in good society, and we should hope will continue so.
 By this method you slip out, shake hands quietly and unobserved
 with the host and hostess, and the party goes on undisturbed;
-otherwise the movement of one is frequently the
+<span class="pagenum" id="Page_26">[Pg 26]</span>otherwise the movement of one is frequently the
 signal for the movement of another, and the party is broken
 up prematurely. I have seen, in homely assemblies, a sedate
 matron retire to dress, and re-appear with bonnet and shawl on
 to shake hands with the whole company. Nothing can be
 more vulgar, or detrimental to the life of a party, however
-unpretending its character.
+unpretending its character.</p>
 
 
-<sc>Letters.</sc>—To answer letters promptly, explicitly, and
+<p class="gap"><span class="smcap">Letters.</span>—To answer letters promptly, explicitly, and
 briefly, is a duty incumbent on every person receiving one.
 I have known persons leave letters for weeks unanswered,
 with the consoling remark, “Ah! there’s So-and-so’s letter,
@@ -995,68 +1331,68 @@ from the lady of the house, and replies should be addressed
 to her in return. I would recommend adherence to this rule,
 even in little invitations to tea passing from one friend to
 another. They give wives their proper place and importance,
-and that is essential to decorum, comfort, and propriety.
+and that is essential to decorum, comfort, and propriety.</p>
 
 
-<sc>Mourning.</sc>—In calling on a friend who is in distress, put
+<p class="gap"><span class="smcap">Mourning.</span>—In calling on a friend who is in distress, put
 on a little mourning also, or at least go in no flashy attire. If
 your correspondent seals his letters with black, seal yours to
-him with black also.
+him with black also.</p>
 
 
-<sc>Mysteriousness.</sc>—Never be dark or mysterious. If propriety
-does not allow you to say a thing outright, do not allude
+<p class="gap"><span class="smcap">Mysteriousness.</span>—Never be dark or mysterious. If propriety
+<span class="pagenum" id="Page_27">[Pg 27]</span>does not allow you to say a thing outright, do not allude
 to it at all. A gentleman always attends to those old but
 excellent mottoes, “Mind your own business,” and “A still
-tongue makes a wise head.”
+tongue makes a wise head.”</p>
 
 
-<sc>Punctuality</sc> is one of the characteristics of politeness.
+<p class="gap"><span class="smcap">Punctuality</span> is one of the characteristics of politeness.
 He who does not keep his appointments promptly is unfit for
 the society of gentlemen, and will soon find himself shut out
-from it.
+from it.</p>
 
 
-<sc>Punning</sc> is of late years very much indulged in. It is not
+<p class="gap"><span class="smcap">Punning</span> is of late years very much indulged in. It is not
 altogether objectionable, but is liable to become so; for
 punsters, like mad dogs, when once started, run on till they
 are exhausted. Punning, too, is the lowest species of wit,
 and unless puns are most happily pointed, and free from all
 personal allusion, they are silly and contemptible. If you
-pun, do not laugh at your own joke.
+pun, do not laugh at your own joke.</p>
 
 
-<sc>Purse-pride</sc> is to be seen everywhere, and is always an
+<p class="gap"><span class="smcap">Purse-pride</span> is to be seen everywhere, and is always an
 evidence of weakness and vulgarity. Make no exhibition of
 your means; and if misfortune befal any of your friends, be
 still more careful not to display before them your superior
 fortune. Many a heart has been rankled by conduct of this
-sort, which prevails largely amongst the members of families.
+sort, which prevails largely amongst the members of families.</p>
 
 
-<sc>Quarrels</sc> are lowering to all the parties engaged in them,
+<p class="gap"><span class="smcap">Quarrels</span> are lowering to all the parties engaged in them,
 and usually terminate in the discomfiture of those who think
 they have the strongest side. If you feel you are in the right
-you are not justified in making the right ridiculous.
+you are not justified in making the right ridiculous.</p>
 
 
-<sc>Ridicule.</sc>—To indulge in ridicule, whether the subject be
+<p class="gap"><span class="smcap">Ridicule.</span>—To indulge in ridicule, whether the subject be
 present or absent, is to descend below the level of gentlemanly
 propriety. Your skill may excite laughter, but will not insure
-respect.
+respect.</p>
 
 
-<sc>Religion.</sc>—A reverential regard for religious observances,
+<p class="gap"><span class="smcap">Religion.</span>—A reverential regard for religious observances,
 and religious opinions, is a distinguishing trait of a refined
 mind. Whatever your opinions on the subject, you are not to
 intrude them on others, perhaps to the shaking of their faith
 and happiness. Religious topics should be avoided in conversation,
 except where all are prepared to concur in a respectful
-treatment of the subject. In mixed societies the subject
-should never be introduced.
+<span class="pagenum" id="Page_28">[Pg 28]</span>treatment of the subject. In mixed societies the subject
+should never be introduced.</p>
 
 
-<sc>Sulkiness</sc> is not often indulged in by grown people, but
+<p class="gap"><span class="smcap">Sulkiness</span> is not often indulged in by grown people, but
 we have seen lamentable instances of men, otherwise possessed
 of considerable sense, who would sulk for several weeks
 together, and during that time refrain from speaking a word to
@@ -1076,10 +1412,10 @@ bidding as a dog would be, to be spoken to and favoured when
 he pleases, conscious when you do speak that every word you
 utter is fraught with danger to his peace of mind. A morose
 man never has many friends, and runs the risk of dying in
-old age without even one.
+old age without even one.</p>
 
 
-<sc>Salutations</sc> should be suited to the parties saluted. It
+<p class="gap"><span class="smcap">Salutations</span> should be suited to the parties saluted. It
 is a point much disputed upon whom the obligation of the
 first salute lies, when persons of different age or condition
 meet. The best rule is for the younger to salute the senior,
@@ -1093,7 +1429,7 @@ allowed, and this is always to be returned, whether you
 remember the person or not; but to halt, and insist on shaking
 hands, and entering upon some complimentary small-talk, is
 quite an error, unless the parties are on terms of actual
-acquaintance. And here I am reminded of the prevalence, at
+<span class="pagenum" id="Page_29">[Pg 29]</span>acquaintance. And here I am reminded of the prevalence, at
 the present day, of protracted street salutations. You are
 suddenly met by an acquaintance who bears down upon you as
 the Chesapeake bore down upon the Shannon. You are seized
@@ -1118,36 +1454,36 @@ out of respect to age. When a person of my own age, however,
 treats me to one of these damp embraces, I do not hesitate
 to withdraw my hand if I can; and if he holds it too tight,
 and will not yield, I pinch him more tightly than he likes,
-and continue my grip till he breaks down.
+and continue my grip till he breaks down.</p>
 
-Salutations should always be hearty, but softened by politeness;
+<p>Salutations should always be hearty, but softened by politeness;
 and in shaking hand with a lady, do not grasp the whole
 palm, as you do with your bosom friend, but let the fingers
-only meet, and be immediately withdrawn.
+only meet, and be immediately withdrawn.</p>
 
 
-<sc>Slights</sc> are easily offered, and not so easily made amends
+<p class="gap"><span class="smcap">Slights</span> are easily offered, and not so easily made amends
 for. Be careful how you treat sensitive persons, that they
 may not think themselves slighted, for no wound goes so deep
-as wounded pride.
+as wounded pride.</p>
 
 
-<sc>Small-Talk.</sc>—Some persons think the small-talk of society
+<p class="gap"><span class="smcap">Small-Talk.</span>—Some persons think the small-talk of society
 very worthless and degrading, but so far from this being the
 case, it is most useful. You cannot expect persons to utter
-profound wisdom every time they speak, and small-talk serves
+<span class="pagenum" id="Page_30">[Pg 30]</span>profound wisdom every time they speak, and small-talk serves
 to render persons in some degree acquainted and sociable
 before more important topics arise. Besides, good subjects
 arise out of small-talk; and conversation that begins in trifles
-frequently ends in matters of high profit.
+frequently ends in matters of high profit.</p>
 
 
-<sc>Secrecy</sc> is essential to the polite man or woman, who do
+<p class="gap"><span class="smcap">Secrecy</span> is essential to the polite man or woman, who do
 not repeat all they see and hear or know of people; but
-affectation of secrecy is a vulgarity, and never begets confidence.
+affectation of secrecy is a vulgarity, and never begets confidence.</p>
 
 
-<sc>Spite and Revenge</sc> are poor instruments, as unchristian
+<p class="gap"><span class="smcap">Spite and Revenge</span> are poor instruments, as unchristian
 as they are morally degrading. No refined mind indulges in
 revengeful feelings. We should be above resenting an injury,
 but avoid the society of those who needlessly give offence.
@@ -1156,10 +1492,10 @@ for it is written, Vengeance is mine; I will repay, saith the
 Lord. Therefore if thine enemy hunger, feed him; if he
 thirst, give him drink: for in so doing thou shalt heap coals
 of fire on his head. Be not overcome of evil, but overcome
-evil with good.”
+evil with good.”</p>
 
 
-<sc>Spitting</sc> is a filthy habit, and annoys one in almost every
+<p class="gap"><span class="smcap">Spitting</span> is a filthy habit, and annoys one in almost every
 quarter, in-doors and out. Since vulgarity has had its way so
 extensively amongst us, every youth begins to smoke and spit
 before he has well cut his teeth. Smoking is unquestionably a
@@ -1168,25 +1504,25 @@ condemned; yet the spitting associated with it detracts very
 much from the enjoyment. No refined person will spit where
 ladies are present, or in any public promenade; the habit is
 disgusting in the extreme, and one would almost wish that it
-could be checked in public by means of law.
+could be checked in public by means of law.</p>
 
 
-<sc>Surliness</sc> is far from the amiability and gentleness which
+<p class="gap"><span class="smcap">Surliness</span> is far from the amiability and gentleness which
 true refinement teaches us. There is a vast deal of surliness
 to be encountered from puffed-up tradespeople and small professionals,
-but it is never the mark of mental polish.
+but it is never the mark of mental polish.</p>
 
 
-<sc>Vanity.</sc>—Most of us are too vain; and I fear the gentle
+<p class="gap"><span class="smcap">Vanity.</span>—Most of us are too vain; and I fear the gentle
 sex must be charged with somewhat of an excess in this particular.
 We are not to sneer at the vanity of others, and
-endeavour to mortify them therein, but first look to ourselves,
+<span class="pagenum" id="Page_31">[Pg 31]</span>endeavour to mortify them therein, but first look to ourselves,
 that we are not equally vain in our own particular manner. A
 vain display is always an abject thing, and may be dispensed
-with profitably.
+with profitably.</p>
 
 
-<sc>Vulgarities.</sc>—We often have inward promptings of the
+<p class="gap"><span class="smcap">Vulgarities.</span>—We often have inward promptings of the
 vulgarity of our actions; there is a sort of instinctive propriety
 in all of us, and whenever we heed these monitions
 from within, we are pretty sure to be in the right. If you
@@ -1207,9 +1543,9 @@ by two females (I regret I cannot say <i>ladies</i>), who sat
 with heads protruding from the windows, shouting and passing
 pleasantries to some acquaintance on the pathway. Rudeness
 of any kind on such occasions causes annoyance to all who
-witness it.
+witness it.</p>
 
-Avoid all boastings and exaggerations, backbiting, abuse,
+<p>Avoid all boastings and exaggerations, backbiting, abuse,
 and evil speaking; slang phrases and oaths in conversation;
 depreciate no man’s qualities, and accept hospitalities of the
 humblest kind in a hearty and appreciative manner; avoid
@@ -1217,47 +1553,50 @@ giving offence, and if you do offend, have the manliness to
 apologise; infuse as much elegance as possible into your
 thoughts as well as your actions; and as you avoid vulgarities
 you will increase the enjoyment of life, and grow in the
-respect of others.
+respect of others.</p>
 
 
-<sc>Whispering</sc> is often indulged in by the young; and my
+<p class="gap"><span class="smcap">Whispering</span> is often indulged in by the young; and my
 parting advice to all is, never to whisper, either in the presence
-or absence of others. What you cannot say plainly do
+<span class="pagenum" id="Page_32">[Pg 32]</span>or absence of others. What you cannot say plainly do
 not say at all; and by never indulging in the practice you
 will never give way to it unconsciously in the presence of those
-who may think you are whispering of them.
+who may think you are whispering of them.</p>
 
 
-<sc>Concluding Hints.</sc>—Adapt your greetings to the ages
+<p class="gap"><span class="smcap">Concluding Hints.</span>—Adapt your greetings to the ages
 and conditions of persons, but do not lapse into stiffness
 on one hand, and excess of freedom on the other. Age
 demands respect in all conditions of life, and superiors in
-station should have the deference to which they are entitled.
+station should have the deference to which they are entitled.</p>
 
-When offered a seat, or invited to sit to a meal, you are, in
+<p>When offered a seat, or invited to sit to a meal, you are, in
 all ordinary cases, bound to accept the invitation without
 hesitation. If you find your friend dining, you cannot expect
 him to talk to you, unless you join him at his request. If
-you refuse, he must finish hastily in order to entertain you.
+you refuse, he must finish hastily in order to entertain you.</p>
 
-In passing narrow ways, such as doorways and the like,
+<p>In passing narrow ways, such as doorways and the like,
 step aside in time for your superior to pass before you; and
 if he request you to precede him, you must do so at once. If
 you are the superior, it is a graceful action to motion your
 companion to take the precedence. No one likes to be the
-lag-behind by compulsion.
+lag-behind by compulsion.</p>
 
-In the street, if a person bows to you, you are bound to
+<p>In the street, if a person bows to you, you are bound to
 return the salutation, even if you do not remember him. You
 may remember when he has passed, and bitterly regret the
 neglect of courtesy. Ladies should be on the alert while
 walking, to give polite obeisance to any friend who may pass,
 for in this case the gentleman cannot offer the salute; the onus
 rests with the lady whether recognition shall take place
-or not.
+or not.</p>
 
-At a party, if you wish to tell any visitor that his cab or
+<p>At a party, if you wish to tell any visitor that his cab or
 other vehicle is waiting for him, you must use the word <i>carriage</i>.
 All vehicles are carriages that bring visitors, and no
 lady or gentleman wishes it to be advertised to the room that
-their <i>cab</i>, or wheelbarrow, is waiting for them.
+their <i>cab</i>, or wheelbarrow, is waiting for them.</p>
+
+</body>
+</html>

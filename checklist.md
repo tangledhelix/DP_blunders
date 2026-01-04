@@ -255,42 +255,42 @@ p. 123: changed “foo” to “fool” (the fool and his money)
 
 ## Prepare the HTML Version
 Finally, we create an HTML version of the book.
-* [ ] Open `blunders.html` that was saved previously.
+* [x] Open `blunders.html` that was saved previously.
 
 ### Convert EM and LONG dashes to UTF8
 Earlier, EN dashes were converted. That's done before the split for both versions. The EM and LONG dash conversions are left for HTML only, because the EM dash character displays as a fixed width for most readers of the text file. There have been differences of opinion about this matter, but I'm sticking to `--`, `----` in the text unless PG stops accepting it.
 
 References: ([p1347865](https://www.pgdp.net/phpBB3/viewtopic.php?p=1347865#p1347865)), ([p1179008](https://www.pgdp.net/phpBB3/viewtopic.php?p=1179008#p1179008))
 
-* [ ] Long dash: S/R `([^-])----([^-]|$)` → `\1——\2`
+* [x] Long dash: S/R `([^-])----([^-]|$)` → `\1——\2`
   * There exists a “long dash” Unicode character (TWO-EM DASH, U+2E3A). However, display support for it is not broad, so it’s better to use two consecutive EM DASH, which is widely supported.
-* [ ] Em dash: S/R `([^-])--([^-]|$)` → `\1—\2`
+* [x] Em dash: S/R `([^-])--([^-]|$)` → `\1—\2`
   * There exists another dash (HORIZONTAL BAR, U+2015) which one PM/PP prefers to EM DASH (using two bars for one EM DASH), based on appearance in text version. I opted not to use this in favor of using the EM DASH character in both text and HTML.
 
 ### Generate the HTML
-* [ ] It is preferable for the source line-breaks to match the book; however HTML poetry markup won't work unless `/P..P/` sections have been rewrapped. If the book has much poetry, rewrap it all; else select and rewrap poetry sections individually.
+* [x] It is preferable for the source line-breaks to match the book; however HTML poetry markup won't work unless `/P..P/` sections have been rewrapped. If the book has much poetry, rewrap it all; else select and rewrap poetry sections individually.
   * Don't remove the rewrap markers. These are needed for generation of proper HTML.
-* [ ] Search for `^/[*$pcrflxi]` (regex, no match-case) and make any desired [rewrap marker](https://www.pgdp.net/wiki/PPTools/Guiguts/Guiguts_Manual/Tools_Menu#Rewrap_Markers) changes before HTML generation
-* [ ] TODO: Figure out how to do `chap_fn` for Footnotes, i.e. `1_1, 1_2, ... 2_1, 2_2, ...` rather than a single numbered list?
-* [ ] TODO: Footnotes need to move to landing zones before HTML generation?
-* [ ] Open `HTML → HTML Generator`.
+* [x] Search for `^/[*$pcrflxi]` (regex, no match-case) and make any desired [rewrap marker](https://www.pgdp.net/wiki/PPTools/Guiguts/Guiguts_Manual/Tools_Menu#Rewrap_Markers) changes before HTML generation
+* [x] TODO: Figure out how to do `chap_fn` for Footnotes, i.e. `1_1, 1_2, ... 2_1, 2_2, ...` rather than a single numbered list?
+* [x] TODO: Footnotes need to move to landing zones before HTML generation?
+* [x] Open `HTML → HTML Generator`.
   * Correct the Title if not auto-detected properly.
   * Set options as desired.
   * Use the `Auto-generate HTML` button.
-* [ ] Save the file and open it in a browser.
-* [ ] Scroll through looking for systematic errors. (Title pages, tables, etc. will look terrible; no matter). If automatic conversion messed up, start this step over with a reset file.
-* [ ] Page through the book looking for text that was not handled well by automatic HTML generation, in particular:
+* [x] Save the file and open it in a browser.
+* [x] Scroll through looking for systematic errors. (Title pages, tables, etc. will look terrible; no matter). If automatic conversion messed up, start this step over with a reset file.
+* [x] Page through the book looking for text that was not handled well by automatic HTML generation, in particular:
   * [Title pages](https://www.pgdp.net/wiki/DP_Official_Documentation:PP_and_PPV/DP_HTML_Best_Practices/Case_Studies/Title_Pages).
   * [Tables and Tables of Contents](https://www.pgdp.net/wiki/DP_Official_Documentation:PP_and_PPV/DP_HTML_Best_Practices/Case_Studies/Tables). The `Auto Table` button can help format tables.
     * A book with wide tables that don't render well may benefit from the page numbers moving to the left margin. This is easy to do, just change `left` under the `.pagenum` class to something like `2%` or `1.5%`. I used `1.5%` for `presidents`.
   * [Indexes](https://www.pgdp.net/wiki/Indexes) - can use Guiguts `/i ... i/` feature
-    * [ ] Sanity-check index for links, improper line breaks, etc.
-    * [ ] Review index for "see X" entries and link any of those manually
+    * [x] Sanity-check index for links, improper line breaks, etc.
+    * [x] Review index for "see X" entries and link any of those manually
   * Illustrations.
-* [ ] Use `HTML → HTML Markup` to make improvements. Use regex replacements to make systematic changes.
+* [x] Use `HTML → HTML Markup` to make improvements. Use regex replacements to make systematic changes.
   * Where you see a problem, make a correction in Guiguts, save the file, and click the "reload" button in the web browser.
-* [ ] Hyperlink page references in text, TOC, and index (discussed [here](https://www.pgdp.net/wiki/PPTools/Guiguts/HTML#Hyperlinking_Page_Numbers) and [here](https://www.pgdp.net/wiki/Indexes)).
-* [ ] Remove the [Generated TOC](https://www.pgdp.net/wiki/PPTools/Guiguts/Guiguts_Manual/HTML_Menu#Generated_TOC) if it is not needed.
+* [x] Hyperlink page references in text, TOC, and index (discussed [here](https://www.pgdp.net/wiki/PPTools/Guiguts/HTML#Hyperlinking_Page_Numbers) and [here](https://www.pgdp.net/wiki/Indexes)).
+* [x] Remove the [Generated TOC](https://www.pgdp.net/wiki/PPTools/Guiguts/Guiguts_Manual/HTML_Menu#Generated_TOC) if it is not needed.
 * [ ] If `A.M.` `P.M.` or similar abbreviations were used and have spaces, insert `&nbsp;` to avoid undesirable mid-abbreviation line wraps.
 * [ ] If superscripts were used, convert to `<sup>`
 * [ ] Semantic fixup for italics
