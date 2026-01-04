@@ -14,7 +14,7 @@ Page references (e.g. `001`) refer to the scan numbers, not the original book's 
 
 ### Things to revisit ###
 
-* [ ] 003: (HTML) first word in smallcaps
+* [x] 003: (HTML) first word in smallcaps
 
 ### Project manager notes ###
 
