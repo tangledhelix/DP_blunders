@@ -71,3 +71,17 @@ The iPhone/iPad simulators can't use `file://` URLs. Start a local web server wi
 ### Ebook review ###
 
 ### Smooth Reading ###
+
+#### smoothread_01.txt ####
+
+`bearing[**hearing]`
+
+Checked original scans on Google Books; SR is correct, this was an OCR error.
+
+`conjure[**Query: this does not seem to be the correct word. Perhaps adjure?]`
+
+Merriam-Webster: "to charge or entreat earnestly or solemnly"
+
+Websters 1828 (emphasis mine): "To call on or summon by a sacred name, or in a solemn manner; **to implore with solemnity.** It seems originally to have signified, to bind by an oath."
+
+The Google Books scans clearly say "conjure". While "adjure" would also make sense here, it is not the word the author chose. It appears that it makes sense as-printed; therefore leaving as printed.
