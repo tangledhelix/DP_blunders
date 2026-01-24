@@ -85,3 +85,9 @@ Merriam-Webster: "to charge or entreat earnestly or solemnly"
 Websters 1828 (emphasis mine): "To call on or summon by a sacred name, or in a solemn manner; **to implore with solemnity.** It seems originally to have signified, to bind by an oath."
 
 The Google Books scans clearly say "conjure". While "adjure" would also make sense here, it is not the word the author chose. It appears that it makes sense as-printed; therefore leaving as printed.
+
+#### smoothread_02.txt ####
+
+`bearing[**hearing]`
+
+In agreement with smoothread 01.
